@@ -1,0 +1,197 @@
+.logo {
+  text-align: center;
+}
+.logo img {
+  width: 10%;
+  height: 10%;
+}
+
+.head
+{
+	 display: block;
+  margin-left: 39%;
+  margin-right: 61%;
+  width: 50%;
+  font-size: 50%;
+}
+
+ .white {
+	margin: 10px auto 10px;
+	padding: 200px;
+	width: 50%;
+	background-color: #FFFFFF;
+	text-align: center;
+
+}
+.login
+{
+	margin: 10px auto 20px;
+	padding: 50px;
+	width: 40%;
+	height: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #aaa;
+	box-shadow: 10px 10px 10px #aaa;
+	text-align: center;
+}
+.signup
+{
+	margin: 10px auto 20px;
+	padding: 50px;
+	width: 40%;
+	height: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #aaa;
+	box-shadow: 10px 10px 10px #aaa;
+	text-align: center;
+	background-color: #FFA500;
+
+}
+.Signup a{
+
+float: left;
+  color: green;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 15px
+
+}
+textarea {
+width: 200px;
+height: 6em;
+}
+
+input 
+{
+	width: 200px;
+	height: 22px;
+}
+
+h5
+{
+	color: red;
+	margin: 10px auto 20px;
+	text-align: center;
+}
+h4
+{
+	color: green;
+	margin: 10px auto 20px;
+	text-align: center;
+}
+h1
+{
+	color: purple;
+	margin: 10px auto 20px;
+	
+}
+.head h1
+{
+	color: black;
+	margin-right: 48%;
+	margin-left: auto;
+}
+.log
+{
+margin-left: 64%;
+margin-right: 36%;
+  	
+}
+
+body
+{
+	background-color: rgb(204, 204, 204);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font: 15px/1.5 century;
+    padding:0;
+    margin:0;
+   text-align:center;
+
+}
+
+.Nav ul{
+	list-style-type: none;
+	 margin: 0;
+ 	 padding: 0;
+ 	  
+}
+
+.container{
+  width:85%;
+   margin:auto;
+  overflow:hidden;
+}
+
+/*GLOBAL*/
+/*
+.Nav div
+{
+  margin: 50px;
+  border: 5px solid #4CAF50;
+  background-color:blue;
+}
+*/
+.home a{
+
+
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.Search a{
+
+float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px
+}
+
+.FAQ a
+{
+float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.Up_resume a
+{
+float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.nav a:hover { 
+  background-color: yellow;
+}
+
+.home a.box1 {
+  background-color: #1e90ff;
+  color: white;
+}
+.Search a.box2 {
+  background-color: #1e90ff;
+  color: white;
+}
+.Up_resume a.box3 {
+  background-color: #1e90ff;
+  color: white;
+}
+.FAQ a.box4 {
+  background-color: #1e90ff;
+  color: white;
+  
+}
