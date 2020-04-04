@@ -98,6 +98,8 @@ else
 		//$sql="insert into registration values();"
 		$sql= mysqli_query($con,"insert into employers(company,c_type, username, email, image,website, password,language,about) values('$cname','$ctype','$username','$umail','$pic','$website','$upass','$language','$about')") or die($con);
 
+		//$sql = mysqli_query($con,"insert into chat_user(regusername)values('$username')")or die($con);
+
 		//$result = mysqli_fetch_assoc($sql);
 		if($sql)
 		{  
@@ -225,7 +227,10 @@ else
                 </button>
             </div>
             <br />
-             <label style="color: green;">have an account ! <a href="forgot_p_emp.php" style="color: red">Forgot Password ?</a></label><br>
+            
+
+
+             <label> <a target="_blank" href="forgot_p_emp.php" style="color: red">Forgot Password ?</a></label><br>
             <label>have an account ! <a href="index.php">Sign In</a></label>
         </form>
        </div>

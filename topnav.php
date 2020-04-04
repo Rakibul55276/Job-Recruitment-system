@@ -8,7 +8,7 @@ include "log_index.php";
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NEUON AI</title>
+    <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
     <meta name="description" content="Neuon AI -- Company Website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -51,19 +51,17 @@ include "log_index.php";
                         <a id="a" class="page-scroll" href="index.php">Home</a>
                     </li>
                     <li>
-                        <a id="a" class="page-scroll" href="#one">Model S</a>
+                        <a id="a" class="page-scroll" href="#one">Dream Job</a>
                     </li>
                     <li>
-                        <a id="a" class="page-scroll" href="#two">Model X</a>
+                        <a id="a" class="page-scroll" href="#two">Carrer</a>
                     </li>
                     <li>
-                        <a id="a" class="page-scroll" href="#three">Model 3</a>
+                        <a id="a" class="page-scroll" href="#three">Product</a>
                     </li>
+                   
                     <li>
-                        <a id="a" class="page-scroll" href="#four">Roadster</a>
-                    </li>
-                    <li>
-                        <a id="a" class="page-scroll" href="scrollaffect.php">Energy</a>
+                        <a id="a" class="page-scroll" href="scrollaffect.php">About</a>
                     </li>
                 </ul>
 <style>
@@ -76,9 +74,7 @@ include "log_index.php";
 
                 <ul class="nav navbar-nav navbar-right">
 				
-					<li>
-                        <a id="a" href="career.php">career</a>
-                    </li>
+					
 					
                     <li class="btt" id="modal1">
                         <img src="sin.png"onclick="document.getElementById('modal1').style.display='block'"></li>

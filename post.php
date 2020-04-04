@@ -1,14 +1,8 @@
 <?php
  //we need session for the log in thingy XD 
-    include("dbconfig.php");
+    include("session.php");
 ?>
-<?php
-  session_start();
-  if($_SESSION['employer']=='')
-  {
-     header('location:index_emp.php');
-  }
-?>
+
 <?php
 function timeAgo($time_ago){
 
@@ -96,9 +90,15 @@ function timeAgo($time_ago){
 
      $sql=mysqli_query($con,"insert into requests(usr_id_p, status_title, status, status_image, status_time) 
         values('$uid','$status_tit','$sta','',now());");
+
+      //$sql=mysqli_query($con,"insert into default(usr_id_p, status_title, status, status_image, status_time) values('$uid','$status_tit','$sta','',now());");
      if($sql)
      {
-        echo '<script>alert("post inserted successfully..");</script>';
+        echo '<script>alert("post inserted successfully waiting for Admin approval..");
+
+            window.location="post.php"
+        </script>';
+        //header("index_emp.php");
      }
   }
 
@@ -113,93 +113,75 @@ function timeAgo($time_ago){
     <meta name="author" content="">
 
 
-    <title>Signin Template for Bootstrap</title>
+    <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <?php include('header1.php') ?>
+
 
 
   </head>
     
-  <body class="text-center">
-      <div class="container">
-            <form method="post"class="form-signin">
-              <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-              <h1 class="h3 mb-3 font-weight-normal">Post your Job Here</h1>
+  
+         
+
+<div class="row" style="clear:both">
+<div class="col-lg-20">
+
+<div class="col-lg-8">
+	</div>
 
 
-              <label for="inputEmail" class="sr-only">TITLE</label>
+<div class="col-lg-10"style="margin-right: 50%;">
+	<div class="panel panel-default">
+	
+<form  method="POST">
 
-              <input name="status_title" type="text" id="title" class="form-control" placeholder="Title" required>
+
+	
+  <h1 style="margin-left: 200px;">Post your Job Here</h1>
 
 
 <br><br>
-              
-          
-            <textarea class="form-control1" cols="45" rows="10" placeholder="Write Job Details..." type="textarea" name="status" required></textarea>
+<label>Title :</label>
+<input type="text" name="status_title"  placeholder="Job title"class="form-control" ><br><br>
 
-              
-              
-
-              <style>
-                            
-                    .form-signin {
-                      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-                      
-                      width: 600px;
-
-                      height: 600px;
-                      
-                      padding: 1em;
-                      
-                      border: 5px solid #ccc;
-                       
-                       margin-left: auto;
-                      
-                      margin-right: auto;
-
-                      background-color:silver;
-                                  }
-
-                     
-                   .form-control
-                    {
-                      height: 40px;
-                      width:500px;
-                      margin-right:550px;
-                      font-size: 20px;
-                      margin-right: 40%;
-                      margin-left: 5%;
-                      
-                    }
-
-                    .btn
-                        {
-                          height: 35px;
-                          width:100px;
-                          background-color:#3823E6;
-                        }
-
-                    #btmn
-                    {
-                      color:blue;
-                      text-decoration-color: red;
-                    }
-                    body {
-                  background-image: url("paper.jpg");
-                  background-repeat: no-repeat;
-                  background-size: auto;
-                  background-size: cover;
-                    
-}
-              </style>
-<br><br>
-              <button name="post" class="btn" type="submit">POST</button>
 
 <br><br>
-              <a href="index_emp.php" class="mt-5 mb-3 text-muted" id="btmn">Go back to login page</a>
-            </form>
-          </div>
+<label>Details Job :</label><br>
+<textarea  name="status" rows='4' cols="50"class="form-control"  placeholder="Write you job description here"></textarea>
+<BR/><BR>
+
+ <input type="submit" name="post" style="margin-left: 300px;"class="btn btn-default" value="POST">
+ </div>
+
+
+</div>
+</div>
+</form>
+
+
+</div>
+
+
+		<!--content -->
+			
+						
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+</div>
+
+<?php include"footer.php";?>
+
       
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

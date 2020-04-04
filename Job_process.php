@@ -1,14 +1,4 @@
-<?php
- //we need session for the log in thingy XD 
-    include("dbconfig.php");
-?>
-<?php
-  session_start();
-  if($_SESSION['employer']=='')
-  {
-     header('location:reg.php');
-  }
-?>
+<?php include('session.php') ?>
 <?php
 function timeAgo($time_ago){
 

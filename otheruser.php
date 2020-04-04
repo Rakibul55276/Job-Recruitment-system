@@ -1,18 +1,8 @@
 <?php 
 
-    include("dbconfig.php");
+    include("session.php");
 ?>
-<?php 
-  session_start(); 
 
-    if(!isset($_SESSION['username']) || trim($_SESSION['username']) == ''){
-    header('location: index.php');
-    exit();
-  }
-
-  $sql = "SELECT * FROM employers WHERE usr_id = '".$_SESSION['username']."'";
-  $query = $con->query($sql)or die($con->error);
-?>
  
 <?php
 function timeAgo($time_ago){
@@ -164,8 +154,11 @@ function timeAgo($time_ago){
 	 <div class="col-lg-12">
            <div class="panel panel-default">
            
-		<form method="post">
-	<a href="index_emp.php" class="mt-5 mb-3 text-muted" id="btmn">Go back to login page</a>
+		<form method="post"><br><br><br><br><br><br><br>
+			<!--<button>
+			<a href="index_emp.php"style = "text-decoration: none;" class="mt-5 mb-3 text-muted" id="btmn">Back</a>
+		</button>-->
+	
 </div>
 <hr/>
 

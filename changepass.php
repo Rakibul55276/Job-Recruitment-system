@@ -1,5 +1,5 @@
 <?php 
-    include("dbconfig.php");
+    include("session.php");
     
 ?>
  <script>
@@ -138,8 +138,7 @@ if(a.length<6)
 </div>
 
 </div>
-
-
+<?php include"footer.php";?>
 
  
 <!-- Bootstrap Core JavaScript -->

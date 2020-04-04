@@ -1,18 +1,7 @@
 <?php 
-    include("dbconfig.php");
+    include("session.php");
 ?>
 
- <?php 
-  session_start(); 
-
-    if(!isset($_SESSION['username']) || trim($_SESSION['username']) == ''){
-    header('location: index.php');
-    exit();
-  }
-
-  $sql = "SELECT * FROM employers WHERE usr_id = '".$_SESSION['username']."'";
-  $query = $con->query($sql)or die($con->error);
-?>
 
 
 
@@ -156,7 +145,7 @@ function timeAgo($time_ago)
 												<div class="id-img-box"><a href="otheruser.php?userid='.$row['usr_id'].'"><img src="user_images/'.$row['image'].'"></a></img></div>
 												<div class="id-name">
 													<ul>
-													<b><a href="otheruser.php?userid='.$row['usr_id'].'">	'.$row['username'].'</a> </b>
+													<b><a target = "_blank" href="otheruser.php?userid='.$row['usr_id'].'">	'.$row['username'].'</a> </b>
 														<li><small>'.timeAgo($time).'</small></li>
 													</ul>
 												</div>
@@ -184,13 +173,14 @@ function timeAgo($time_ago)
                                                  $n=$row2["username"];
                                                  $img=$row2["image"];
                                                  echo '<div style="margin-left:50px">
-										<a href="otheruser.php?userid='.$uid.'"><img style="height:20px; width="20px" src="user_images/'.$img.'"></img></a>
+										<a  href="otheruser.php?userid='.$uid.'"><img style="height:20px; width="20px" src="user_images/'.$img.'"></img></a>
+
 										&nbsp; &nbsp;'.$c.'
 											 </div>
 											 <div style="margin-left:50px"><div class="id-name">
 													<ul>
 													
-														<small>'.timeAgo($ct).'</small> &nbsp; &nbsp; &nbsp;<font style="color:blue"> comment by :</font> <font style="font-size:12px"><a href="otheruser.php?userid='.$uid.'"> '.$n.'</a></font>
+														<small>'.timeAgo($ct).'</small> &nbsp; &nbsp; &nbsp;<font style="color:blue"> comment by :</font> <font style="font-size:12px"><a target = "_blank" href="otheruser_seek.php?userid='.$uid.'"> '.$n.'</a></font>
 													</ul>
 											</div>
 										</div>

@@ -60,7 +60,9 @@
  <span class="icon-bar"></span>
  <span class="icon-bar"></span>
  </button>
+
  <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+ 
  </div>
  <div id="navbar" class="navbar-collapse collapse">
   
@@ -156,8 +158,7 @@
  <a href="#" class="navbar-brand">
   
   
-               
- <span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php echo $userRow['username']; ?>
+          
  
  </a>
  </li>
@@ -227,8 +228,15 @@
 
   
   </a>
-  <a href="my_task.php" class="list-group-item">My task
-  </a>
+   <a href="#demo" data-toggle="collapse" class="list-group-item"><span> Manage Tasks</span></a>
+
+   <div id="demo" class="collapse">
+        <a href="my_task.php"class='list-group-item' style='color:black'>Live Post</a>
+        <a href="dis_mytask.php" class='list-group-item' style='color:black'>Your Posts</a>
+      </div>
+
+
+  
   <a href="post.php" data-toggle="#" data-target="#" class="list-group-item">
   	Post Job
   </a>
@@ -236,8 +244,8 @@
   
   <a href="changepass.php" class="list-group-item">Change Password
   </a>
-  <a href="logout1.php" class="list-group-item">Log Out
-  </a>
+  <a target="_blank" href="./chat/index.php" class="list-group-item" name="submit">Instant Employee</a>
+<!--<a href="logout1.php" class="list-group-item">Log Out</a>-->
 </div>
 </div>
  	     <div class="col-lg-8">

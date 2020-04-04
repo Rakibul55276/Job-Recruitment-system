@@ -13,9 +13,9 @@ include 'conn.php';
 
 <div class="navbartop">
 	<div class="navbar-nav navbar-left" id="adminlogo1">
-        <a href="#" id="adminlogo1"><i class="ion-ios-analytics-outline"></i>NEUON AI</a>
+        <a href="#" id="adminlogo1"><i class="ion-ios-analytics-outline"></i></a>
     </div>
-	<center class="navbar-nav navbar-center">Neuon AI Admin Panel</center>
+	<center class="navbar-nav navbar-center">UNIMAS JOB RECRUITMENT SYSTEM</center>
 
 	<a href="#" class="navbar-nav navbar-right" data-toggle="dropdown">
 		<span>
@@ -26,7 +26,7 @@ include 'conn.php';
 	<ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header">
-            <img src="<?php echo (!empty($user['photo'])) ? '/images/'.$user['photo'] : '../images/profile.jpg'; ?>" alt="User Image">
+            <img src="<?php echo (!empty($user['photo'])) ? './images/'.$user['photo'] : '../images/profile.jpg'; ?>" alt="User Image">
 
             <p>
                 <?php echo $user['firstname']; ?>

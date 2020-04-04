@@ -6,13 +6,13 @@ Website: https://www.allphptricks.com
 ?>
 <html>
 <head>
-<title>Demo Forgot Password Recovery (Reset) using PHP and MySQL - AllPHPTricks.com</title>
+<title>UNIMAS JOB RECRUITMENT SYSTEM</title>
 <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
 </head>
 <body>
 <div style="width:700px; margin:50 auto;">
 
-<h2>Demo Forgot Password Recovery (Reset) using PHP and MySQL</h2>   
+<h2>UNIMAS JOB RECRUITMENT SYSTEM</h2>   
 
 
 <?php
@@ -50,23 +50,21 @@ mysqli_query($con,"UPDATE `employers` SET `password`='".$key."' WHERE `email`='"
  
  
 $output='<p>Dear user,</p>';
-$output.='<p>Please click on the following link to reset your password.</p>';
+$output.='<p>We have sent you a temporary password please use this password to login and change your password</p>';
 $output.='<p>-------------------------------------------------------------</p>';
+$output='<strong>Password:</strong>';
 $output.=$key;
-$output.='<p><a href="http://localhost:8181/demo/new_pass.php?
-key='.$key.'&email='.$email.'&action=reset" target="_blank">
-href="http://localhost:8181/demo/new_pass.php?key='.$key.'&email='.$email.'&action=reset</a></p>'; 
+ 
 $output.='<p>-------------------------------------------------------------</p>';
-$output.='<p>Please be sure to copy the entire link into your browser.
-The link will expire after 1 day for security reason.</p>';
+$output.='<p>Please be sure to copy the entire password into your browser.
+The password will expire after 1 day for security reason.</p>';
 $output.='<p>If you did not request this forgotten password email, no action 
 is needed, your password will not be reset. However, you may want to log into 
 your account and change your security password as someone may have guessed it.</p>';   
 $output.='<p>Thanks,</p>';
-$output.='<p>AllPHPTricks Team</p>';
+$output.='<p>All Info. Team</p>';
 $body = $output; 
-$subject = "Password Recovery - AllPHPTricks.com";
- 
+$subject = "Password Recovery UNIMAS JOB RECRUITMENT SYSTEM";
 $email_to = $email;
 $fromserver = "irakibul550@gmail.com"; 
 require("PHPMailer/PHPMailerAutoload.php");
@@ -75,11 +73,11 @@ $mail->IsSMTP();
 $mail->Host = "smtp.gmail.com"; // Enter your host here
 $mail->SMTPAuth = true;
 $mail->Username = "irakibul550@gmail.com"; // Enter your email here
-$mail->Password = "0128485987"; //Enter your password here
+$mail->Password = "012848598788"; //Enter your password here
 $mail->Port = 587;
 $mail->IsHTML(true);
 $mail->From = "rakibunimas@gmail.com";
-$mail->FromName = "AllPHPTricks";
+$mail->FromName = "Change Password";
 $mail->Sender = $fromserver; // indicates ReturnPath header
 $mail->Subject = $subject;
 $mail->Body = $body;
@@ -92,7 +90,8 @@ echo "<div class='error'>
 </div><br /><br /><br />";
  }
    }
-}else{
+}else
+{
 ?>
 
 <form method="post" action="" name="reset"><br /><br />
@@ -108,8 +107,6 @@ echo "<div class='error'>
 
 
 <br /><br />
-<a href="https://www.allphptricks.com/forgot-password-recovery-reset-using-php-and-mysql/"><strong>Tutorial Link</strong></a> <br /><br />
-For More Web Development Tutorials Visit: <a href="https://www.allphptricks.com/"><strong>AllPHPTricks.com</strong></a>
 </div>
 </body>
 </html>

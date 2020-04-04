@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NEUON AI</title>
+    <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
     <meta name="description" content="Neuon AI -- Company Website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -24,12 +24,12 @@
 
 <div class="sidenavside">
 
-        <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+        <a href="position_modal.php"><i class="fa fa-dashboard"></i> Dashboard</a>
 
         <a href="#demo" data-toggle="collapse"><i class="fa fa-suitcase"></i><span> Manage Posts</span></a>
 		
 			<div id="demo" class="collapse">
-				<a href="home_admin.php"><i class='fas fa-angle-double-right' style='color:white'></i>Posts</a>
+				<a href="home_admin.php"><i class='fas fa-angle-double-right' style='color:white'></i>Pending Posts</a>
 			</div>
 
 		<a href="#demo1" data-toggle="collapse">
@@ -40,6 +40,17 @@
 				<a href="employer.php"><i class='fas fa-angle-double-right' style='color:white'></i> Employers</a>
 				<a href="seeker.php"><i class='fas fa-angle-double-right' style='color:white'></i> Seekers</a>
 			</div>
+
+
+
+<a href="#demo2" data-toggle="collapse"><i class="fa fa-cube" aria-hidden="true"></i><span> Manage Products</span></a>
+		
+			<div id="demo2" class="collapse">
+				<a href="upload_p.php"><i class='fas fa-angle-double-right' style='color:white'></i>Post Product</a>
+				<a href="view_p.php"><i class='fas fa-angle-double-right' style='color:white'></i>View Product</a>
+			</div>
+
+
         
 		
 		<a href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>

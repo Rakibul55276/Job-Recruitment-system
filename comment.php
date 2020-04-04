@@ -1,19 +1,8 @@
 <?php 
-    include("dbconfig.php");
-    session_start();
+    include("session.php");
+   
 ?>
-<?php 
-  
-	
-    if($_SESSION["username"]=="")
-    {
-        header("location:index_emp.php");
 
-    }
-    
-
-
-?>
 <?php
  if(isset($_POST["uid"]))
  {

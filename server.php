@@ -1,7 +1,9 @@
  
-<?php include('conn.php') ?>
+<?php include('session.php') ?>
+
+
 <?php
-session_start();
+
 
 // initializing variables
 if (isset($_POST['reguser'])) 

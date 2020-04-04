@@ -1,21 +1,6 @@
-<?php 
-    include("dbconfig.php");
-    session_start();
-?>
-<?php 
-if(isset($_GET["id"]))
-{   
-	
-    if($_SESSION["username"]=="")
-    {
-        header("location:index_emp.php");
-
-    }
-    
-}
+<?php include('session.php') ?>
 
 
-?>
 <?php
 function timeAgo($time_ago){
 
@@ -101,7 +86,7 @@ function timeAgo($time_ago){
  
  <!-- http://draganzlatkovski.com/code-projects/toggle-jquery-side-bar-menu-in-bootstrap-free-template/ -->
  
- <title>Dashboard Template for Bootstrap</title>
+ <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
  
  <!-- jQuery -->
  
@@ -222,7 +207,7 @@ $sql1=mysqli_query($con,"select * from posts where post_id='$p_id'");
             <div class="post-footer">
                 <div class="input-group"> 
 
-                    <textarea class="form-control" cols="100" rows="10" placeholder="Add a comment" type="text" name="comment"></textarea>
+                    <!--<textarea class="form-control" cols="100" rows="10" placeholder="Add a comment" type="text" name="comment"></textarea>-->
 
                     <input class="form-control"  type="hidden" name="uid" value="<?php echo $_SESSION['id']; ?>">
 
@@ -230,9 +215,9 @@ $sql1=mysqli_query($con,"select * from posts where post_id='$p_id'");
 
                    	<div class="btn-group" role="group" style="margin-top:5px">
 
-					<button type="submit" name="submit_comment"  class="btn btn-primary btn-hover-green" >Post Your Comment</button>
+					<!--<button type="submit" name="submit_comment"  class="btn btn-primary btn-hover-green" >Post Your Comment</button>--->
           
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

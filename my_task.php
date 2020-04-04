@@ -1,17 +1,7 @@
 <?php 
-    include("dbconfig.php");
+    include("session.php");
 ?>
-<?php 
-  session_start(); 
 
-    if(!isset($_SESSION['username']) || trim($_SESSION['username']) == ''){
-    header('location: index.php');
-    exit();
-  }
-
-  $sql = "SELECT * FROM employers WHERE usr_id = '".$_SESSION['username']."'";
-  $query = $con->query($sql)or die($con->error);
-?>
  <?php 
   if(isset($_POST["submit"]))
   {  
@@ -96,11 +86,69 @@ function timeAgo($time_ago){
 			}
 		} 
 ?>
+<?php 
 
+    
+    
+
+
+ if(isset($_GET['pid']))
+ {  
+    $ps_id=$_GET['pid'];
+
+    //$uid=$_SESSION["id"];
+
+       $sql1=mysqli_query($con,"delete from comments where post_id_c='$ps_id'"); 
+        $sql3=mysqli_query($con,"delete from posts where post_id='$ps_id'");
+
+
+
+         if($sql3)
+      	{
+      	echo '<script>alert("Your post has been disabled..");
+      			window.location="index_emp.php"
+        </script>';
+       
+
+ 		}
+
+}
+?>
+<?php/*
+if(isset($_GET['pid']))
+ {  
+    $ps_id=$_GET['pid'];
+
+ $query = "select * from `posts` where `post_id` = '$id'; ";
+
+        $res =mysqli_query($con,$query);
+
+        while($row=mysqli_fetch_array($res)) 
+        {
+        
+
+        	$title = $row['status_title'];
+            $details = $row['status'];
+            $uid=$row['usr_id_p'];
+        	$query = "INSERT INTO `defaults` (`post_id`,`usr_id_p`, `status_title`,`status`) VALUES (NULL,'$uid', '$title','$details','',now());)";
+
+        	$sql5 =mysqli_query($con,$query);
+
+        	if ($sql5) 
+     				{
+
+       					 header("index_emp.php");	
+        			}
+    }
+      
+        
+  }*/     
+
+?>
 
 <?php include('header1.php') ?>
             <!--left-content-->
-						<?php 
+		<?php 
 						$uid=$_SESSION["id"];
                             $sql=mysqli_query($con,"select * from posts where usr_id_p='$uid' order by posts.status_time desc");
                             $sql2=mysqli_query($con,"select * from employers where usr_id='$uid'");
@@ -161,7 +209,8 @@ echo '<div style="margin-left:50px"><img style="height:20px; width="20px" src="u
 											</div>
 										</div>';
 									   }
-					echo '<a href="delete_post.php?pid='.$id.'" class="btn btn-default">Delete</a>';
+					
+      echo '<a style="color:red;" href="my_task.php?pid='.$id.'" class="btn btn-default">Disable</a>';
 							echo '</div>
 
 									</div>
@@ -192,7 +241,6 @@ echo '<div style="margin-left:50px"><img style="height:20px; width="20px" src="u
 
 
 
- 
 <!-- Bootstrap Core JavaScript -->
 <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
 

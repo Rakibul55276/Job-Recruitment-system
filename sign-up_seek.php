@@ -30,13 +30,16 @@ if(isset($_POST['btn-signup']))
     $result = mysqli_query($con, $check_sql);
     $seeker = mysqli_fetch_assoc($result);
 
-if ($seeker) { // if user exists
-    if ($seeker['username'] === $username) {
+if ($seeker) 
+{ // if user exists
+    if ($seeker['username'] === $username) 
+    {
       $error['username'] = "Username already exists";
       //array_push($errors, "Username already exists");
     }
 
-    if ($seeker['email'] === $umail) {
+    if ($seeker['email'] === $umail) 
+    {
       
       $error['email'] = "Email already exists";
       //array_push($errors, "email already exists");
@@ -95,6 +98,8 @@ else
 	{
 		//$sql="insert into registration values();"
 $sql= mysqli_query($con,"insert into seekers(fname, username, email, image, password, address, birthdate, contact, gender, skills ) values('$fname','$username','$umail','$pic','$upass', '$address','$birthdate','$contact','$gender','$skills')");
+
+//$sql = mysqli_query($con,"insert into chat_user(regusername)values('$username')")or die($con);
 
 $result = mysqli_query($con,$sql);
 
@@ -190,12 +195,12 @@ $result = mysqli_query($con,$sql);
 
 			?>
       <?php
-    require_once "g_config.php";
+    //require_once "g_config.php";
   if (isset($_SESSION['username'])) {
-    header('Location: index_emp.php');
+    header('Location: ./b_seeker/index_seek.php');
     exit();
   }
-  $loginURL = $gClient->createAuthUrl();
+  //$loginURL = $gClient->createAuthUrl();
 ?>
 <!DOCTYPE html>
 <html>
@@ -277,11 +282,11 @@ $result = mysqli_query($con,$sql);
                 	<i class="glyphicon glyphicon-open-file"></i>&nbsp;SIGN UP
                 </button>
 <br><br>
-                <div class="row">
+              <!--  <div class="row">
                     <div>
                         <center><div class="g-signin2" onclick="window.location = '<?php echo $loginURL ?>';"  name="google"></div></center>
                     </div>
-                </div>
+                </div>-->
             </div>
             <style>
             	#left{
@@ -291,9 +296,9 @@ $result = mysqli_query($con,$sql);
                 margin-right: 10%;
               }
             </style>
-            <br /><br />
+            
 
-             <label style="color: green;">have an account ! <a href="forgot_p_seek.php" style="color: red">Forgot Password ?</a></label>
+             <label> <a target="_blank" href="forgot_p_seek.php" style="color: red">Forgot Password ?</a></label>
       
             <label>have an account ! <a href="index.php">Sign In</a></label>
            

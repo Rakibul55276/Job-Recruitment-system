@@ -10,7 +10,12 @@ $errors = array();
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'update');
 
+if ($db->connect_error){
+        die('connection failed');
+    } 
 
+else
+{
 // LOGIN USER
 if (isset($_POST['loginuser'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -65,5 +70,5 @@ if (isset($_POST['loginuser'])) {
 
 
 }
-
+}
 ?>

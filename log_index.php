@@ -146,14 +146,14 @@ button:hover {
         Select user Type:<select name="usertype">
           <option value="seeker">Seeker</option>
           <option value="employer">Employer</option>
-          <option value="admin">Admin</option>
+         
 
         </select> 
       </td>
     </tr>
          <br>
       <button type="submit" class="sub">Login</button>
-      <a href="#" style="text-decoration:left; margin-left:252px; margin-top:26px;">Forgot Password ?</a>
+      
       <br>
       
 		

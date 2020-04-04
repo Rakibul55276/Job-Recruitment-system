@@ -9,9 +9,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="HandheldFriendly" content="true">
 
-    <title>NEUON AI</title>
-    <meta name="description" content="Neuon AI -- Company Website" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
+    <meta name="description" content="Website -- FYP" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
     <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -28,7 +28,7 @@
 
   </head>
   <body>
-  <nav>
+    
     <br>
     <h1><i><strong>UNIMAS JOB RECRUITMENT SYSTEM</strong></i></h1>
 	<div id="mySidenav" class="sidenav">
@@ -168,18 +168,19 @@ for (var i = 0; i < all.length; i++) {
     <section class="container-fluid" id="one">
 	<div class="row">
 	<div class="col-12 px-0">
-	<img class="image" src="images/wall3.jpg">
+	<img class="image" src="images/scroll2.jpg">
 	</div>
 				<table>
 				<tr class="table">
 					<td>
-						<p class="text1">Solar</p>
-						<p class="text2">Produce Clean Energy</p>
-						<p class="buttonpad"><button class="button" style="vertical-align:middle"><span>Solar Panels </span>
-						<button class="button" style="vertical-align:middle"><span>Solar Roof </span></button>
+						<p class="text1">Dream Job</p>
+						<p class="text2">Achive your Dream</p>
+						<p class="buttonpad"><button class="button" style="vertical-align:middle"><span>Get Quote </span>
+						<button class="button" style="vertical-align:middle"><span>Learn More </span></button>
 					</td>
 					<td  class="move">
-						<p>Convert sunlight into clean energy with solar panels on your </br>existing roof, or a brand new Solar Roof.</p>
+						<p>To find the job of your dreams, start by understanding who you are,</br> how you work best, and what you want to do with your life.
+						</br> Once you know these things, you’ll be more prepared to find your </br>dream jobs at companies that match your unique style. Ask yourself.</p>
 					</td>
 				</tr>
 				</table>
@@ -189,18 +190,18 @@ for (var i = 0; i < all.length; i++) {
     <section class="container-fluid" id="two">
 	<div class="row">
 	<div class="col-12 px-0">
-	<img class="image" src="images/wall.jpg">
+	<img class="image" src="images/scroll1.jpg" style="height: 400px">
 	</div>
 				<table>
 				<tr class="table">
 					<td>
-						<p class="text1">Powerwall</p>
-						<p class="text2">Store Your Energy</p>
+						<p class="text1">Carrer</p>
+						<p class="text2">Build Your Carrer</p>
 						<p class="buttonpad"><button class="button" style="vertical-align:middle"><span>Learn More </span>
 						<button class="button" style="vertical-align:middle"><span>Request a Quote </span></button>
 					</td>
 					<td  class="move">
-						<p>A home battery designed to store your clean energy, so you can </br>use it anytime you want—at night or during an outage.</p>
+						<p>Inspiration lacking this Monday morning? On the job search and feeling blue?</br> Stuck in a career you hate? Not sure what success means to you?</br> You're not alone. Grab a nice, warm cup of coffee and let us help you out.</p>
 					</td>
 				</tr>
 				</table>
@@ -209,18 +210,18 @@ for (var i = 0; i < all.length; i++) {
     <section class="container-fluid" id="three">
 	<div class="row">
 	<div class="col-12 px-0">
-	<img class="image" src="images/wall2.jpg">
+	<img class="image" src="images/scroll3.jpg">
 	</div>
 				<table>
 				<tr class="table">
 					<td>
-						<p class="text1">Powerpack</p>
-						<p class="text2">Massive Energy Storage</p>
+						<p class="text1">PRODUCT</p>
+						<p class="text2">Choose your product from Here</p>
 						<p class="buttonpad"><button class="button" style="vertical-align:middle"><span>COMMERCIAL </span>
 						<button class="button" style="vertical-align:middle"><span>UTILITYSS</span></button>
 					</td>
 					<td  class="move">
-						<p>A giant battery designed to change the way we power the world </br>—with clean energy, at an enormous scale.</p>
+						<p>In this day and age we are able to leverage benefits from many service </br>providers across the UNIMAS.you no longer have to pay for everything.</br>We deliver not only the for students, but also helping you with other </br>business needs,products can be new or used. such as house stuffs,</br>Stationary, etc.please contact to admin panel to buy and sell product </p>
 					</td>
 				</tr>
 				</table>
@@ -236,7 +237,7 @@ for (var i = 0; i < all.length; i++) {
 		
 		// Retrieve images from the database
 		//$query = $con->query("SELECT * FROM employers ORDER BY id DESC");
-		$sql ="select * from `employers`";
+		$sql ="select * from `product`";
 		//$sql="SELECT * FROM `employers` ORDER BY DESC";
 		
 		$result = $con->query($sql);
@@ -244,19 +245,23 @@ for (var i = 0; i < all.length; i++) {
 
 		if($result && $result->num_rows>0){
 			while($row = $result->fetch_assoc()){
-				$imageThumbURL = 'user_images/'.$row["image"];
-				$imageURL = 'user_images/'.$row["image"];
-				$about = $row["about"];
+                   
+				$imageThumbURL = './user_images/'.$row["image"];
+				$imageURL = './user_images/'.$row["image"];
+			 //echo "<img src='./user_images/$image' class='imagedb'>";
 		?>
 		<div class="col-lg-4 col-sm-6">
 			<a ref="#galleryModal" class="gallery-box" data-toggle="modal">
-				<img src="<?php echo $imageThumbURL ?>" class="img-responsive" alt="" />
+				<img src="<?php echo $imageThumbURL ?>" class="img-responsive" style="width: 400px;height: 400px;" alt="" />
 				<div class="gallery-box-caption">
                 <div class="gallery-box-content">
                     <div>
 						<div>
-							<h5 class="gallery-box-content"><b>Hillary Johnson</b></br></br> Software Developer</br></br></br></br></br></br>Software Engineer Job Duties: Determines operational feasibility by evaluating analysis, problem definition, requirements, solution development, and proposed solutions. </br></br></br>
-						   Documents and demonstrates solutions by developing documentation, flowcharts, layouts, diagrams, charts, code comments and clear code.</h5>
+							<h5 class="gallery-box-content"><b>Admin</b></br></br> UNIMAS STUFFS</br></br></br></br></br></br>Please cotact to the admin contact information while you choose product to buy as well as want to sell
+							 </br></br></br>
+						   Contact Number:+60128485987
+						   email:55276@siswa.unimas.my
+							</h5>
                         </div>
                     </div>
                  </div>
@@ -350,7 +355,7 @@ for (var i = 0; i < all.length; i++) {
                 </div>
             </div>
             <br/>
-            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">We built for FUTURE...</a> ©Neuon AI</span>
+            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">We built for FUTURE...</a> ©UNIMAS JOB RECRUITMENT SYSTEM</span>
         </div>
     </footer>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -370,7 +375,7 @@ for (var i = 0; i < all.length; i++) {
         <div class="modal-dialog">
         <div class="modal-content">
         	<div class="modal-body">
-        		<h2 class="text-center">Neuon AI</h2>
+        		<h2 class="text-center">UNIMAS JOB RECRUITMENT SYSTEM</h2>
         		<h5 class="text-center">
         		    We built for FUTURE...
         		</h5>

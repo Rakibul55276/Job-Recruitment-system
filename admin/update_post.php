@@ -132,7 +132,7 @@ $status = $_POST["status"];
 
   $sql = mysqli_query($con,"UPDATE requests SET status_title='".$status_t."', status='".$status."' where post_id='$ps_id'") or die($con);
 
-
+header("location:home_admin.php");
 //$update = mysqli_fetch_assoc($sql);
 
 
@@ -147,7 +147,7 @@ $status = $_POST["status"];
 
 
             <form method="post"class="form-signin">
-              <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+              
               <h1 class="h3 mb-3 font-weight-normal">Update user Post</h1>
 
 
@@ -220,7 +220,7 @@ $status = $_POST["status"];
               <button name="update" class="btn" type="submit">Update</button>
 
 <br><br>
-              <a href="home_admin.php" class="mt-5 mb-3 text-muted" id="btmn">Go back to login page</a>
+              <a href="home_admin.php" class="mt-5 mb-3 text-muted" id="btmn"> Back</a>
             </form>
           </div>
       

@@ -81,6 +81,8 @@ function timeAgo($time_ago){
             $uid=$row['usr_id_p'];
         $query = "INSERT INTO `posts` (`post_id`,`usr_id_p`, `status_title`,`status`,status_image, status_time) VALUES (NULL,'$uid', '$title','$details','',now());)";
 
+        $query1 = "INSERT INTO `defaults` (`post_id`,`usr_id_p`, `status_title`,`status`,status_image, status_time) VALUES (NULL,'$uid', '$title','$details','',now());)";
+
 
         }
         $q = "DELETE FROM `requests` WHERE `post_id` = '$id';";
@@ -93,11 +95,14 @@ function timeAgo($time_ago){
                         	if(performQuery($q))
                         	{
                         
-                        echo '<script>
-                        alert("Your post has been Accepted");
-                        window.location="home_admin.php"
-                        </script>';
-                        ;
+
+                                if(performQuery($query1))
+                                    {
+                                 echo '<script>
+                                             alert("Your post has been Accepted");
+                                             window.location="home_admin.php"
+                                        </script>';
+                        ;           }
                         		
                         	}
 
@@ -107,12 +112,13 @@ function timeAgo($time_ago){
                 else
                     {
                         echo '<script>
-                        alert("Unknown error occured. Please try again.");
+                        alert("Approved");
                         window.location="home_admin.php"
                         </script>';
 
                     }
-    }else{
+    }else
+    {
         				echo '<script>
                         alert("Error occured.");
                         window.location="home_admin.php"

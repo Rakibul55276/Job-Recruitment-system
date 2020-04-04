@@ -1,17 +1,7 @@
-<?php 
-    include("dbconfig.php");
-?>
- <?php 
-  session_start(); 
+<?php include('session.php') ?>
 
-    if(!isset($_SESSION['username']) || trim($_SESSION['username']) == ''){
-    header('location: index.php');
-    exit();
-  }
 
-  $sql = "SELECT * FROM employers WHERE usr_id = '".$_SESSION['username']."'";
-  $query = $con->query($sql)or die($con->error);
-?>
+
 <?php
 function timeAgo($time_ago){
 
@@ -80,256 +70,7 @@ function timeAgo($time_ago){
 			}
 		} 
 ?>
-<?php 
-  if(isset($_POST["submit"]))
-  {  
-  	 $status_tit=$_POST["status_title"];
-     $sta=$_POST["status"];
-     $uid=$_SESSION["id"];
-     $sql=mysqli_query($con,"insert into posts(usr_id_p,status_title,status,status_image,status_time) 
-     	values('$uid','$status_tit','$sta','',now());");
-     if($sql)
-     {
-     	echo '<script>alert("post inserted successfully..");</script>';
-     }
-  }
-
-
-?>
-
-
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
- <meta charset="utf-8">
-
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
- <meta name="viewport" content="width=device-width, initial-scale=1">
-
- <meta name="description" content="">
-
- <meta name="author" content="">
-
- <link rel="icon" href="../../favicon.ico">
- 
- <!-- http://draganzlatkovski.com/code-projects/toggle-jquery-side-bar-menu-in-bootstrap-free-template/ -->
- 
- <title>Job Post Pannel</title>
- 
- <!-- jQuery -->
- 
- <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="components/bootstrap/dist/js/jquery.js"></script>
- 
-  
- 
- <!-- Bootstrap core CSS -->
- <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
- 
- <!-- Custom styles for this template -->
- <link href="components/bootstrap/dist/css/simple-sidebar.css" rel="stylesheet">
-  <link href="components/bootstrap/dist/css/postmodal.css" rel="stylesheet">
-  <link href="components/bootstrap/dist/css/fbbox.css" rel="stylesheet">
-
- 
-
- 
-
- 
- 
-</head>
-
-<body>
- 
- 
- 
-
-
- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
- <div class="container-fluid">
- <div class="navbar-header">
- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
- <span class="sr-only">Toggle navigation</span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- </button>
- <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
- </div>
- <div id="navbar" class="navbar-collapse collapse">
-  
-  
-    <label class="navbar-text text-center text-primary" style="vertical-align:10px;font-size:medium ">Welcome to our Sites </label>
-<label class="navbar-text text-center text-primary" style="vertical-align:10px;font-size:medium ">Hello! <font style="font-size:13px"> <?php echo $_SESSION["username"]; ?> </font> </label>
-
-
-   <?php  include("header1.php"); ?>
-
-    
-
-
- 
- </div>
- </nav>
- 
- 
- 
- <!--
-<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Post Task</button></div>
--->
-
- 
-
-
-<!-- line modal -->
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			
-			
-            <!-- content goes here -->
-			  
-
-		
-		
-			
-	
-		
-
-					
-
-		</div>
-		
-
-		
-	</div>
-  </div>
-</div>
-
-  		</form>
- 
- 
- 
- 
- 
- 
- 
- <div id="wrapper" class="toggled">
- <div class="container-fluid">
- <!-- Sidebar -->
- <div id="sidebar-wrapper">
- <ul class="sidebar-nav">
- <li class="sidebar-brand">
- <br>
-
- <style>
- 	.toggled
- 	{
- 		height: -5px;
- 	}
- </style>
- </li>
- <li class="sidebar-brand">
- <a href="#" class="navbar-brand">
-  
-  
-               
- <span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php echo $userRow['username']; ?>
- 
- </a>
- </li>
- <li>
- <a href="home.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <font style="color:white"> Home </font></a>
- </li>
- <!--
- <li>
- <a href="#"><span  class="glyphicon glyphicon-comment"  aria-hidden="true"></span> Notification</a>
- </li> 
- 
- -->
- <li>
-  <a href="mytask.php"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> My Task</a>
- </li>
- 
- <li>
- 
- <li>
- 
- </ul>
- </div>
- <!-- /#sidebar-wrapper -->
- 
-
- 
- 
- 
- <!-- /#page-content-wrapper -->
- </div>
- </div>
- <!-- /#wrapper -->
-
-  
-  <!-- Page Content -->
- <div id="page-content-wrapper">
- <div class="container-fluid">
- <div class="row">
- <div class="col-lg-12">
- <br>
-
- </div>
- </div>
- <div class="row">
- <div class="col-lg-12">
-
-     <div>
-</div>
- </div>
- </div>
- </div>
- </div>
-  
-  
-  <!-- this is div for user post -->
-<div class="fluid-container">
-<div class="row" style="clear:both">
- <div class="col-lg-12">
- 	    <div class="col-lg-4">
-		<div class="list-group" style="margin-right:250px">
- 
-   <a href="index_emp.php" class="list-group-item active" style="background-color:black;">
-    Home</a>
-  
- <a href="ourskill.php" class="list-group-item">Profile
-  </a>
-
-  
-  </a>
-  <a href="my_task.php" class="list-group-item">My task
-  </a>
-  <a href="post.php" data-toggle="#" data-target="#" class="list-group-item">
-  	Post Job
-  </a>
-  <a href="notification.php" class="list-group-item">
-  	Notification(<?php echo $count; ?>)
-  </a>
-  
-  <a href="changepass.php" class="list-group-item">Change Password
-  </a>
-  <a href="logout1.php" class="list-group-item">Log Out
-  </a>
-</div>
-</div>
- 	     <div class="col-lg-8">
-
-            <!--left-content-->
-			<div class="center">
-				<div class="posts">
-					<div class="create-posts">
+<?php  include("header1.php"); ?>
 						<?php 
 						   $sear=$_POST["search"];
                             $sql=mysqli_query($con,"select * from posts  where status_title like '%$sear%'");
@@ -348,6 +89,7 @@ function timeAgo($time_ago){
                              while($row5=mysqli_fetch_array($sql5))
                                {
                                   $uname=$row5['username'];
+                                  $ud=$row5['usr_id'];
                                   $imp=$row5['image'];
 
                                }
@@ -359,9 +101,8 @@ function timeAgo($time_ago){
 												<div class="id-img-box"><img src="user_images/'.$imp.'"></img></div>
 												<div class="id-name">
 													<ul>
-										
-											
-												<li><small>'.timeAgo($time).'</small></li>
+													<b><a target="_blank" href="otheruser.php?userid='.$ud.'">	'.$uname.'</a> </b>
+														<li><small>'.timeAgo($time).'</small></li>
 													</ul>
 												</div>
 											</div>
@@ -382,14 +123,14 @@ function timeAgo($time_ago){
                                             $ct=$row1["comment_time"];
                                             $c=$row1["comment"];
                                             $uid=$row1["user_id_c"];
-                                            $sql2=mysqli_query($con,"select * from employers where usr_id='$uid'");
+                                            $sql2=mysqli_query($con,"select * from seekers where usr_id='$uid'");
                                             while($row2=mysqli_fetch_array($sql2))
 										     {
                                                  $n=$row2["username"];
                                                  $img=$row2["image"];
 										     }
 										echo '<div style="margin-left:50px">
-										<img style="height:20px; width="20px" src="user_images/'.$img.'"></img>
+										<img style="height:20px; width="20px" src="./user_images/'.$img.'"></img>
 										&nbsp; &nbsp;'.$c.'
 											 </div>
 											 <div style="margin-left:50px"><div class="id-name">

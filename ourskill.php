@@ -1,15 +1,7 @@
 <?php 
-    include("dbconfig.php");
+    include("session.php");
 ?>
-<?php
-  session_start();
 
-  if($_SESSION['username']=='')
-  {
-     header('location:index_emp.php');
-  }
-
- ?>
 <?php
 
 if(isset($_POST["update"])) {
@@ -250,7 +242,7 @@ $res=mysqli_fetch_array($sql);
 </div>
 
 
-
+<?php include"footer.php";?>
  
 <!-- Bootstrap Core JavaScript -->
 <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>

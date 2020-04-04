@@ -9,7 +9,7 @@ include 'topnav.php';
   <head>
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NEUON AI</title>
+    <title>UNIMAS JOB RECTUITMENT SYSTEM</title>
     <meta name="description" content="Neuon AI -- Company Website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -31,7 +31,7 @@ include 'topnav.php';
 <body>
     <nav id="topNav" class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="index.php"><i class="ion-ios-analytics-outline"></i> NEUON AI</a>
+            <a class="navbar-brand page-scroll" href="index.php"><i class="ion-ios-analytics-outline"></i> UNIMAS JOB RECTUITMENT SYSTEM</a>
         </div>
     </nav>
   
@@ -39,7 +39,7 @@ include 'topnav.php';
 
 <div class='move'>
   <span>
-  <h4 class="text3">Employees</h4>
+  <h4 class="text3">Employers</h4>
   <table>
   </br></br></br></br>
         
@@ -53,7 +53,13 @@ include 'topnav.php';
       <tr>
       <td>
       <p class='jobtext2'><?php echo ucwords($row['company']); ?></p>
-      <p class='jobtext1'><?php echo ucwords($row['username']); ?>,</p>
+      <p class='jobtext1'><?php echo ucwords($row['username']); ?>,<br><br>
+        <?php echo ucwords($row['c_type']);?>,
+        <br><br><?php echo ucwords($row['email']);?>,
+        <br><br><?php echo ucwords($row['website']);?>,
+        <br><br><?php echo ucwords($row['language']);?>,
+        <br><br><?php echo ucwords ($row['about']);?>
+      </p>
       </td>
       
       <td class='move'>

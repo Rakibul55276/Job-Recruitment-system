@@ -1,9 +1,54 @@
 <?php
  //we need session for the log in thingy XD 
     include("functions.php");
+    //include("topnav.php");
+    include("navbar.php");
     
 ?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
+
+<body>
+
+<div class="navbartop">
+  <div class="navbar-nav navbar-left" id="adminlogo1">
+        <a href="#" id="adminlogo1"><i class="ion-ios-analytics-outline"></i></a>
+    </div>
+  <center class="navbar-nav navbar-center">UNIMAS JOB RECRUITMENT SYSTEM</center>
+
+ <!-- <a href="#" class="navbar-nav navbar-right" data-toggle="dropdown">
+    <span>
+      <?php //echo $user['username']; ?> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <img src="<?php //echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '/images/profile.jpg'; ?>" alt="Admin">
+  </a>
+  <ul class="dropdown-menu">-->
+        <!-- User image -->
+       <!-- <li class="user-header">
+            <img src="<?php //echo (!empty($user['photo'])) ? '/images/'.$user['photo'] : '../images/profile.jpg'; ?>" alt="User Image">
+
+            <p>
+                <?php //echo $user['firstname']; ?>
+                <small>Member since <?php //echo date('M. Y', strtotime($admin['created_on'])); ?></small>
+            </p>
+        </li>
+        <li class="user-footer">
+            <div class="pull-right">
+                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+            </div>
+        </li>
+    </ul>-->
+
+</div>
+
+</body>
+
+</html>
 <?php
   session_start();
   if($_SESSION['username']=='')
@@ -19,7 +64,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pending Request System in PHP and MySql</title>
+    <title>UNIMAS JOB RECRUITMENT SYSTEM</title>
 
     <script src="js/a.js"></script>
 
@@ -30,39 +75,6 @@
 
   <body>
 
-    <header>
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-
-            
-          </a>
-            <div class="pull-right">
-                <?php
-                if (isset($_POST['home'])) {
-
-                  header('location:position_modal.php');
-                  # code...
-                }
-
-
-                if (isset($_POST['logout'])){
-                    session_destroy();
-                    header('location:login.php');
-               }
-             
-    
-                ?>
-                <form method="post">
-        
-                    <button name="home" class="btn btn-primary my-2">Home</button>
-
-                    <button name="logout" class="btn btn-danger my-2">Logout</button>
-                </form>
-            </div>
-        </div>
-      </div>
-    </header>
 
     <main role="main">
 
@@ -75,12 +87,13 @@
                     foreach(fetchAll($query) as $row){
                         ?>
                 
-                    <h1 class="jumbotron-heading"><?php echo $row['status_title'] ?></h1>
-                      <p class="lead text-muted"><?php echo $row['status'] ?></p>
+                    <h1 class="jumbotron-heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['status_title'] ?></h1>
+                      <p class="lead text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      	<?php echo $row['status'] ?></p>
                       <p>
-                        <a href="update_post.php?id=<?php echo $row['post_id'] ?>"name="post1" class="btn btn-primary my-2">Edit</a>
+                        <a href="update_post.php?id=<?php echo $row['post_id'] ?>"name="post1" class="btn btn-secondary my-2">Edit</a>
 
-                        <a href="accept.php?id=<?php echo $row['post_id'] ?>"name="post1" class="btn btn-primary my-2">Accept</a>
+                        <a href="accept.php?id=<?php echo $row['post_id'] ?>"name="post1" class="btn btn-secondary my-2">Accept</a>
                         <a href="reject.php?id=<?php echo $row['post_id'] ?>" class="btn btn-secondary my-2">Delete</a>
                       </p>
                     <small><i><?php echo $row['status_time'] ?></i></small>

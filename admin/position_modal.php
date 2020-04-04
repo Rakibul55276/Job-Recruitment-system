@@ -23,4 +23,57 @@
     $( "#datepicker" ).datepicker();
   } );
   </script>
+<style>
+body{
+ background-color: silver;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 0; padding: 0; color: white;
+}
+.signup-button{
+  padding-top: 250px;
+}
+#message {
+  text-align: center;
+  font-size: 40px;
+}
+li{
+  background-color:gray;
+  margin-left: 570px;
+  margin-right: 600px;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  display: inline-block;
+  width: 150px; 
+}
+a{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+a:hover{
+  background-color: maroon;
+  color: snow;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+</style>
 </head>
+<body>
+<section class="signup-button">
+  <div id="message"></div>
+  
+</section>    
+<script>
+var messageing = "Welcome to our Admin Panel";
+var message = messageing.split("");
+var el = document.getElementById('message');
+(function animate() {
+message.length > 0 ? el.innerHTML += message.shift() : clearTimeout(running); 
+var running = setTimeout(animate, 60);
+})();
+</script>
+</body>
+</html>
+
+</html>

@@ -24,7 +24,7 @@ if($_SESSION['username']=='')
        
       if($sql3)
       {
-    	header("location:employee.php");
+    	header("location:employer.php");
       }
 
  }
